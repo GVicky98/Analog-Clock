@@ -1,0 +1,120 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+.clock{
+    --bgclr1:0;
+    --bgclr2:0;
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background: conic-gradient(hsl(var(--bgclr1), 100%, 50%), hsl(var(--bgclr2), 100%, 50%),hsl(var(--bgclr1), 100%, 50%));
+    box-shadow: 0 0 7px black;
+    position: relative;
+}
+.clock .number{
+    color: aliceblue;
+    font-weight: 600;
+    text-shadow: 1px 1px 1px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    font-size: 20px;
+}
+.clock .number6{
+    transform: translate(0px,150px);
+}
+.clock .number5{
+    transform: translate(75px,130px);
+}
+.clock .number4{
+    transform: translate(130px,75px);
+}
+.clock .number3{
+    transform: translate(150px,0px);
+}
+.clock .number2{
+    transform: translate(130px,-75px);
+}
+.clock .number12{
+    transform: translate(0px,-150px);
+}
+.clock .number11{
+    transform: translate(-75px,-130px);
+}
+.clock .number7{
+    transform: translate(-75px,130px);
+}
+.clock .number8{
+    transform: translate(-130px,75px);
+}
+.clock .number9{
+    transform: translate(-150px,0px);
+}
+.clock .number10{
+    transform: translate(-130px,-75px);
+}
+.clock .number1{
+    transform: translate(75px,-130px);
+}
+.clock::after {
+    content: '';
+    position: absolute;
+    background-color: white;
+    border: 1px solid;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    box-shadow: 0 0 7px black;
+}
+ .clock .hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    border: 1px solid #ffffff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transform-origin: bottom;
+    transition: all ease;
+}
+.clock .hour {
+    width: 4px;
+    height: 22%;
+    background-color: white;
+    box-shadow: 0 0 5px black;
+    z-index: 3;
+}
+.clock .minute {
+    width: 3px;
+    height: 35%;
+    background-color: white;
+    box-shadow: 0 0 5px black;
+    z-index: 2;
+}
+.clock .second {
+    width: 1px;
+    height: 40%;
+    background-color: white;
+    box-shadow: 1px 1px 1px black;
+    z-index: 1;
+}
+#thour,#tminute,#tsecond {
+    --rotation: 0;
+    transform: rotate(calc(var(--rotation) * 1deg));
+}
